@@ -1,6 +1,3 @@
-// obtain user input and then print the result as output: io = input/output library
-// io library comes from the standard library, known as std
-// use std::cmp::Ordering;
 use rand::Rng; // importing the the range method from the random library - to specify the range of our secret number
 use std::cmp::Ordering; // importing using the standard library importing comparing library then importing the Ordering enumerator/class
 use std::io; // using the standard library and importing the input/output library
@@ -21,23 +18,9 @@ fn main() {
     loop {
         println!("Please input your guess.");
     
-        // creating a new variable using let statement. 
-            // variables are immutable by default in rust. to make the variable mutable, we add "mut" before the variable name
-            // String::new is a function that returns a new instance of a String
-            // The :: syntax in the ::new line indicates that new is an associated function of the String type
         // declaring a variable guess that is mutable - the variable is a string - and we are creating a new string
         let mut guess = String::new();
     
-        // calling stdin function from the io module, which allows us to handle user input
-        // read_line: calls the read_line method on the standard input handle to get input from the user
-            // passing &mut guess as the argument to read_line to tell it what string to store the user input in
-            // read_line takes whatever the user types into standard input and append that into a string (without overwriting its contents), 
-            // so we therefore pass that string as an argument.
-        // string argument needs to be mutable so the method can change the string’s content
-            // & indicates that this argument is a reference
-            // gives you a way to let multiple parts of your code access one piece of data 
-            // without needing to copy that data into memory multiple times
-        // .expect handles failures
         // read_line puts whatever the user enters into the string we pass to it and returns a result
         // Result is an enumeration, often called an enum, which is a type that can be in one of multiple possible states
             // Each possible state is called a variant
@@ -56,15 +39,8 @@ fn main() {
             Ok(num) => num,
             Err(_) => continue,
         };
-    
-        // prints the string that now contains the user’s input.
-            // {} set of curly brackets is a placeholder
-            // When printing the value of a variable, the variable name can go inside the curly brackets
-                // let x = 5;
-                // let y = 10;
-                // println!("x = {x} and y + 2 = {}", y + 2);
         
-        // this print statement is a s string interpolation - there are two ways to a a string interpolation
+        // this print statement is a string interpolation - there are two ways to a string interpolation
         // the first is to do the same as directly below; however just place the variable within the curly braces and remove the comma. 
         // The one below is the other and this way is used because we cannot do anything with the variable inside the curly braces 
         // however we can do operations and manipulations to the variable outside of the curly braces
